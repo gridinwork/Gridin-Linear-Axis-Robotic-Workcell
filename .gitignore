@@ -1,0 +1,13 @@
+# CAD / editor temporary files
+~$*
+*.bak
+*.tmp
+*.autosave
+
+# Local exports
+exports/
+renders/raw/
+
+# OS files
+.DS_Store
+Thumbs.db
