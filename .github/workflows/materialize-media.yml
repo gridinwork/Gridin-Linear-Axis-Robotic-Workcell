@@ -1,0 +1,29 @@
+name: Materialize portfolio media
+
+on:
+  push:
+    paths:
+      - ".github/workflows/materialize-media.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  unpack-media:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Unpack media
+        run: |
+          unzip -o .publish/media.zip -d .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media
+          if git diff --cached --quiet; then
+            echo "No media changes to commit."
+          else
+            git commit -m "Publish robotic workcell media"
+            git push
+          fi
