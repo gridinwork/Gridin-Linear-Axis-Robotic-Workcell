@@ -15,15 +15,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Unpack media
+      - name: Verify staged archive
         run: |
-          unzip -o .publish/media.zip -d .
+          ls -lh .publish/media.zip
+          unzip -t .publish/media.zip
+
+      - name: Unpack media
+        run: unzip -o .publish/media.zip -d .
+
+      - name: Configure Git
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add media
+
+      - name: Stage media
+        run: git add media
+
+      - name: Commit media
+        run: |
           if git diff --cached --quiet; then
             echo "No media changes to commit."
           else
             git commit -m "Publish robotic workcell media"
-            git push
           fi
+
+      - name: Push media
+        run: git push
