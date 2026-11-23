@@ -9,7 +9,7 @@
 **Advanced robotic workcell developed and modified by Oleg Gridin.**  
 The project evolves the PAROL6 desktop manipulator concept into a larger robotic workcell with an additional linear travel axis, an expanded operating area, multi-position pick-and-place capability, an auxiliary rotary/tilting worktable concept, and a prototype automatic tool-changing station for CNC-style operations.
 
-> The animation above is a CAD motion demonstration of the linear-axis workcell. The original MP4 is included in [`media/video/linear-rail-demo.mp4`](media/video/linear-rail-demo.mp4).
+> The animation above is a CAD motion demonstration of the linear-axis workcell and is embedded as an auto-playing GIF for immediate viewing on GitHub.
 
 ## Project goal
 
@@ -140,7 +140,6 @@ See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for additional attributio
 media/
   images/       CAD renders and prototype photos
   animation/    auto-playing GIF demonstrations for GitHub
-  video/        original MP4 demonstration
 
 docs/           portfolio-oriented engineering notes
 README.md        project overview
